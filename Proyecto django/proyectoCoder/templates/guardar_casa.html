@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Casa</title>
+</head>
+<body>
+    <h1>Formulario para Crear una Casa</h1>
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div>
+            <label for="id_nombre">Nombre de la Casa:</label>
+            {{ casa_form.nombre }}
+        </div>
+        
+        <div>
+            <label for="id_direccion">Dirección:</label>
+            {{ casa_form.direccion }}
+        </div>
+        
+        <div>
+            <label for="id_cantidad_habitantes">Cantidad de Habitantes:</label>
+            {{ casa_form.cantidad_habitantes }}
+        </div>
+        
+        {% comment %} <div>
+            <label for="id_barrio">Seleccione un Barrio:</label>
+            {{ casa_form.barrio }}
+        </div> {% endcomment %}
+        
+        <button type="submit">Guardar Casa</button>
+    </form>
+</body>
+</html>
